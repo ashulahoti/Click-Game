@@ -7,7 +7,7 @@ app.use('/GAME',function(req,res){
        res.sendFile(__dirname + '/final.html');
 })
 
-app.use(express.static(path.join(__dirname, '/public')));
+
 
 app.use('/',function(req,res){
 	res.sendFile(__dirname + '/index.html');
