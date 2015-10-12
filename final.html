@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>The click game</title>
+<div id="allign"><h1 id="mycss">click as fast as you can</h1></div>  
+<div id="allign"><button style="color:red" background="color:blue" onclick="myFunction()" id="btn" id="btn.hover">Start!</button></div>
+
+<style type="text/css">
+#allign{
+	margin-right: 500px;
+  margin-left: 600px;
+}
+
+#mycss
+{
+text-shadow:-1px 1px 3px rgba(255,255,0,1);
+font-weight:bold;
+color:#01070D;
+background-color:#FFFFFF;
+border: 3px groove #b5a759;
+letter-spacing:1pt;
+word-spacing:4pt;
+font-size:58px;
+text-align:center;
+font-family:arial, helvetica, sans-serif;
+line-height:1;
+}
+
+
+#text 
+{
+color: rgb(0, 0, 0);
+font-size: 58px;
+background-color: rgb(26, 17, 17);
+text-shadow: rgb(255, 255, 255) 0px -1px 4px, rgb(255, 255, 0) 0px -2px 10px, rgb(255, 128, 0) 0px -10px 20px, rgb(255, 0, 0) 0px -18px 40px;
+}
+
+#btn {
+  -webkit-border-radius: 60;
+  -moz-border-radius: 60;
+  border-radius: 60px;
+  text-shadow: 0px 0px 14px #8f5a5a;
+  font-family: Arial;
+  color: #ff0000;
+  font-size: 58px;
+  background: #3498db;
+  padding: 10px 12px 10px 20px;
+  border: solid #2b1f8c 6px;
+  text-decoration: none;
+}
+
+#btn:hover {
+  background: #3c5cfc;
+  background-image: -webkit-linear-gradient(top, #3c5cfc, #3498db);
+  background-image: -moz-linear-gradient(top, #3c5cfc, #3498db);
+  background-image: -ms-linear-gradient(top, #3c5cfc, #3498db);
+  background-image: -o-linear-gradient(top, #3c5cfc, #3498db);
+  background-image: linear-gradient(to bottom, #3c5cfc, #3498db);
+  text-decoration: none;
+}
+
+#top{
+	height:150px;
+	width:400px;
+}
+
+#box{
+	margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 500px;
+  margin-left: 500px;
+	height:150px;
+	width:400px;
+	border-style: solid;
+	background-color: blue;
+	text-align: center;
+	color: red;
+}
+
+</style>
+
+<div id='box'><h1>Time Left (in sec)</h1><h1><p id="demo"></p></h1></div>
+<div id='box'><h1>And your Score is</h1><h1><p id="demo1"></p></h1></div>
+<div id="allign"><input id="btn" value="Click" type="button" onclick="clicks++"></div>
+
+<script>
+var clicks =0;
+function myFunction()
+{
+  var cc = 5;
+  document.getElementById("demo1").innerHTML = clicks;
+	var interval = setInterval(function()
+  { 
+       	document.getElementById("demo").innerHTML = -- cc;
+		    if (cc == 0){
+			     document.getElementById("demo1").innerHTML = clicks;
+       		 clearInterval(interval);
+           clicks =0;
+       	}    	
+  },1000);
+}
+</script>
+
+</html>
+</head>
